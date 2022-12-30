@@ -1,0 +1,11 @@
+Caso de prueba #1:
+
+  - Función login y logout:
+  Ambas funcionan correctamente, ya que el usuario, al acceder sin estar logueado, solo puede ver un botón de login. Al loguearse, podrá ver el botón de logout,
+  el cual reemplazará al de login.
+  
+  - Agregar post:
+  El usuario solo puede agregar un post si está logueado. De otra manera, será redirigido a la página de login.
+  
+  - Posts:
+  En caso de no haber ninguno, aparecerá un mensaje indicando que aún no hay posts creados.

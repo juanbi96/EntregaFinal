@@ -1,0 +1,24 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>Mi perfil</h1>
+
+{{ mensaje }}
+
+{{ mensaje_error }}
+
+{% if user %}
+    <h1>Perfil de {{ user.username }}</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>Nombre: {{ user.first_name }}</p>
+    <p>Apellido: {{ user.last_name }}</p>
+{% else %}
+    <p>User not found</p>
+{% endif %}
+
+
+
+{% endblock %}  

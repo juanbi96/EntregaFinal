@@ -1,0 +1,20 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>Registro de usuario</h1>
+    <form method="post">
+        {% csrf_token %}
+        <table> 
+
+            {{ form.as_table }}
+
+        </table>
+
+        <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+
+<h1 class="carousel-title">{{ mensaje_inicio }}</h1> 
+{% endblock %}  

@@ -1,0 +1,30 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+
+
+<h1 style="text-align: center;">Acerca de mí</h1>
+
+<style>
+.card2 {
+  background-color: rgb(180, 227, 204);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+
+
+</style>
+
+<div class="card2">
+    <h3 style="text-align: center;">Juan Biet</h3>
+    <p>Mi nombre es Juan Biet, tengo 26 años. Mis dos pasiones son la música y la fotografía. Soy un amante del cine y del deporte.
+        Estudié comunicación social en Rosario, y actualmente resido en Buenos Aires. Disfruto mucho de viajar y conocer gente nueva.
+    </p>
+    <img src="{% static '/templates/images/messias.jpg' %}" alt="El Chaltén" width=”500″ height=”600″/>
+</div>
+
+{% endblock %}  

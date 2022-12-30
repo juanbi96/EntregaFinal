@@ -1,0 +1,24 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>Crea un post nuevo.</h1>
+<form action="{% url 'inicio' %}" method="POST">
+
+    {% csrf_token %}
+
+<table>
+
+    {{ form.as_table}}
+
+    
+</table>
+
+<input type="submit" value="Crear">
+
+</form>
+
+
+{% endblock %}  

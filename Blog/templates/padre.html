@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+
+    <style>
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
+<title>Forum</title>
+<link href="site.css" rel="stylesheet">
+</head>
+
+<body>
+
+<nav id="nav01"></nav>
+
+<div id="main">
+  <h1></h1> 
+  <h2></h2>
+
+  <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20"> 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color:rgb(155, 218, 255); height:80px; width:1760px; padding: 10px">  
+            </ul>
+            <ul style="padding-left:0px" class="navbar-nav ml-auto">
+                <li style="display:inline" class="nav-item">
+                    <a class="card" href="{% url 'inicio' %}">Inicio</a>
+                </li>
+                <li style="display:inline" class="nav-item">
+                    <a class="card" href="{% url 'pages' %}">Posts</a>
+                </li>
+                <li style="display:inline" class="nav-item">
+                    <a class="card" href="{% url 'registrarse' %}">Registrarse</a>
+                </li>
+                <li style="display:inline" class="nav-item">
+                    <a class="card" href="{% url 'about_me' %}">Acerca de mí</a>
+                </li>
+                
+                {% if user.is_authenticated %}
+                <li style="display:inline" class="nav-item"></li>
+                    <a class="card" href="{% url 'perfil' %}">Mi Perfil</a>
+                </li>
+                <li style="display:inline" class="nav-item"></li>
+                    <a class="card" href="{% url 'logout' %}">Logout</a>
+                </li>
+                <p style="text-align: end">Hola {{ user.username }}</p>
+                {% else %}
+                <li style="display:inline" class="nav-item">
+                    <a class="card" href="{% url 'login' %}">Login</a>
+                </li>
+                {% endif %}
+                
+            </ul>
+        </div>
+</nav>
+
+
+
+  {% block titulo %}
+                            
+  {% endblock %}
+  <footer id="foot01"></footer>
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html> 
